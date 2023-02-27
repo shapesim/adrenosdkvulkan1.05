@@ -1,0 +1,120 @@
+apply plugin: 'com.android.model.application'
+
+model {
+    android {
+        compileSdkVersion = 25
+        buildToolsVersion = "25.0.2"
+
+        defaultConfig.with {
+            applicationId = "com.qualcomm.vulkan.tut_deferred_multipass"
+            minSdkVersion.apiLevel    = 23
+            targetSdkVersion.apiLevel = 25
+        }
+		
+		compileOptions.with {
+			sourceCompatibility=JavaVersion.VERSION_1_7
+			targetCompatibility=JavaVersion.VERSION_1_7
+		}		
+    }
+
+    android.ndk {
+        moduleName = "vulkan-tut_deferred_multipass"
+        stl = "stlport_static"
+        CFlags.add("-I${file("../../../common/native_app_glue")}".toString())
+        CFlags.add("-I${file("../../../include")}".toString())
+        CFlags.add("-std=c99".toString())
+        cppFlags.add("-I${file("../../../common/native_app_glue")}".toString())
+        cppFlags.add("-I${file("../../../include")}".toString())
+        cppFlags.add("-I${file("../../../common")}".toString())
+        cppFlags.add("-std=c++11".toString())
+        ldFlags.add("-L${file("../../../lib/")}".toString())
+        ldLibs.addAll(["log", "android", "vulkan"])
+    }
+    android.buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles.add(file('proguard-rules.txt'))
+        }
+    }
+    android.productFlavors {
+        create ("arm7") {
+            ndk.abiFilters.add("armeabi-v7a")
+        }
+        create ("arm8") {
+            ndk.abiFilters.add("arm64-v8a")
+        }
+        create("fat")
+    }
+    android.sources {
+        main {
+           jni {
+                source {
+                    srcDirs += "../../../common"
+                }
+            }		  
+            jniLibs {
+                source.srcDir "${System.env.ANDROID_NDK}/sources/third_party/vulkan/src/build-android/jniLibs"
+            }
+        }
+    }
+}
+
+
+
+//build SPIR-V bindings
+class generateSPIRVCompiledShaders extends DefaultTask {
+    def validator = "glslangValidator"
+
+    @InputDirectory
+    def File inputDir
+
+    @Input
+    def shouldRun
+
+    @OutputDirectory
+    def File outputShaderDir
+
+    @TaskAction
+    void execute(IncrementalTaskInputs inputs) {
+        println inputs.incremental ? "Changed inputs out of date" : "All inputs out of date"
+        shouldRun = true;
+        inputs.outOfDate { change ->
+            def String fileName = "${change.file.name}"
+            fileName = fileName.replace(".", "_")
+            def args  = " -s -V ${change.file.absoluteFile} -o ${outputShaderDir}/${fileName}.spv"
+            println "SPIR-V Generation: " + (validator + args)
+            def proc = (validator + args).execute()
+            proc.waitFor();
+            if (proc.exitValue())
+            {
+                println change.file.name + " compilation failed, return code: ${proc.exitValue()}"
+                println "stderr: ${proc.err.text}"
+                println "stdout: ${proc.in.text}"
+                throw new GradleException("Shader compilation failure")
+            }
+        }
+    }
+}
+
+task incrementalSPIRVCompile(type: generateSPIRVCompiledShaders) {
+    inputDir = file("src/main/jni/shaders")
+    outputShaderDir = file("src/main/assets")
+    shouldRun = true;
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name.startsWith('generate') && task.name.endsWith("Assets")) {
+        task.dependsOn incrementalSPIRVCompile
+    }
+}
+
+//clean SPIR-V files
+task deleteSPV(type: Delete) {
+    delete fileTree('src/main/assets') {
+        include '**/*.spv'
+    }
+}
+
+clean.dependsOn(deleteSPV)
+
+

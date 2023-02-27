@@ -1,0 +1,65 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:3:1-32:12
+	package
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:4:11-53
+		INJECTED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:6:11-36
+		INJECTED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:5:11-34
+		INJECTED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:3:11-69
+uses-permission#android.permission.INTERNET
+ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:7:3-65
+	android:name
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:7:20-62
+application
+ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:10:3-30:17
+	android:hasCode
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:15:7-30
+	android:label
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:14:7-39
+	android:fullBackupContent
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:12:7-40
+	android:allowBackup
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:11:7-34
+	android:icon
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:13:7-41
+activity#android.app.NativeActivity
+ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:19:5-29:16
+	android:label
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:20:15-47
+	android:configChanges
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:21:15-65
+	android:name
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:19:15-56
+meta-data#android.app.lib_name
+ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:23:7-24:56
+	android:value
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:24:18-53
+	android:name
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:23:18-53
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:25:7-28:23
+action#android.intent.action.MAIN
+ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:26:9-61
+	android:name
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:26:17-58
+category#android.intent.category.LAUNCHER
+ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:27:9-69
+	android:name
+		ADDED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml:27:19-66
+uses-sdk
+INJECTED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+	android:targetSdkVersion
+		INJECTED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AdrenoSDKVulkan\samples\tut_monument\app\src\main\AndroidManifest.xml

@@ -1,0 +1,26 @@
+See file:///D:/AdrenoSDKVulkan/samples/tut_monument/app/build/tmp/compileVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryMainCpp/output.txt for all output for compileVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryMainCpp.
+compiling BufferObject.cpp successful.
+
+compiling VkSampleFramework.cpp successful.
+D:\AdrenoSDKVulkan\common\VkSampleFramework.cpp: In member function 'void VkSampleFramework::InitializeValues()':
+D:\AdrenoSDKVulkan\common\VkSampleFramework.cpp:43:37: warning: converting to non-pointer type 'VkDebugReportCallbackEXT {aka long long unsigned int}' from NULL [-Wconversion-null]
+     mDebugReportCallback            = NULL;
+                                     ^
+
+compiling Thread.cpp successful.
+
+compiling sample.cpp successful.
+
+compiling imgui_draw.cpp successful.
+
+compiling Gui.cpp successful.
+
+compiling TextureObject.cpp successful.
+
+compiling MemoryAllocator.cpp successful.
+
+compiling imgui.cpp successful.
+
+compiling MeshObject.cpp successful.
+
+Finished compileVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryMainCpp, see full log file:///D:/AdrenoSDKVulkan/samples/tut_monument/app/build/tmp/compileVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryMainCpp/output.txt.

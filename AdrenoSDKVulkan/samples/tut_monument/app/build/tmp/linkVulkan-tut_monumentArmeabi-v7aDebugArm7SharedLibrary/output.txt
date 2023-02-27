@@ -1,0 +1,4 @@
+See file:///D:/AdrenoSDKVulkan/samples/tut_monument/app/build/tmp/linkVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibrary/output.txt for all output for linkVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibrary.
+linking libvulkan-tut_monument.so successful.
+
+Finished linkVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibrary, see full log file:///D:/AdrenoSDKVulkan/samples/tut_monument/app/build/tmp/linkVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibrary/output.txt.

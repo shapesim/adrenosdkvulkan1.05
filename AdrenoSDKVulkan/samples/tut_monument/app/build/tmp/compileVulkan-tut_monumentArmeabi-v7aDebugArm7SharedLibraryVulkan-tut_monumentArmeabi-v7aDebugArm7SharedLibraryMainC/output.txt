@@ -1,0 +1,4 @@
+See file:///D:/AdrenoSDKVulkan/samples/tut_monument/app/build/tmp/compileVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryMainC/output.txt for all output for compileVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryMainC.
+compiling android_native_app_glue.c successful.
+
+Finished compileVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryMainC, see full log file:///D:/AdrenoSDKVulkan/samples/tut_monument/app/build/tmp/compileVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryVulkan-tut_monumentArmeabi-v7aDebugArm7SharedLibraryMainC/output.txt.

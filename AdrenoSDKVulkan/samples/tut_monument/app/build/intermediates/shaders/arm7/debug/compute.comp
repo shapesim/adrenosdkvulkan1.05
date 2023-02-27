@@ -1,0 +1,38 @@
+/*
+ * Compute shader
+ */
+#version 450
+#extension GL_ARB_separate_shader_objects : enable
+#extension GL_ARB_shading_language_420pack : enable
+
+layout (local_size_x =4, local_size_y = 4) in;
+
+struct vertex_layout {
+        vec4 pos;
+        vec4 color;
+        vec4 uv;
+    };
+
+layout(std140, binding = 0) buffer data 
+                                    {
+                                       vertex_layout vertices[];
+                                    };
+                                    
+                                    
+layout(std140, binding = 1) buffer detail 
+                                    {
+                                      float time;
+                                    };
+
+void main()
+{  
+  // 64x64 grid
+  uint loc = gl_GlobalInvocationID.y * 64 + gl_GlobalInvocationID.x;
+  
+  float pi = 3.14f;
+  float factor = time + gl_GlobalInvocationID.y*pi*4.0f;
+  float intense = (64-gl_GlobalInvocationID.y)/64.0f;
+  float offset = sin(factor*0.015f);
+  
+  vertices[loc].pos.y =  offset*0.25f*intense;
+}
